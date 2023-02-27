@@ -57,7 +57,19 @@ jobs:
 
       # TODO: add cloudformation linting
       
-      
+      - name: configure aws creds
+        id: creds
+        uses: aws-actions/comfigure-aes-credentials@v1
+        with:
+          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY}}
+          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          aws-region: eu-west-2
+        
+      - name: deploy
+        uses: aws-actions/aws-cloudformation-github-deploy@v1
+        with:
+          name: Raffi
+          template: infra/my-cloudformation.yaml
 
       # TODO: add deployment to cloudformation
 
