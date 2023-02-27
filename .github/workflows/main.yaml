@@ -53,10 +53,14 @@ jobs:
       - name: run unit testing
         working-directory: app
         run: |
-          npm audit
+          npm run audit
 
       # TODO: add unit testing
-      
+      - name: unit testing
+        working-directory: app
+        run: |
+          npm run test
+
       # TODO: add cloudformation linting
 
       # TODO: add deployment to cloudformation
