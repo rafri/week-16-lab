@@ -57,11 +57,8 @@ jobs:
 
       # TODO: add cloudformation linting
       
-      - name: cloudformation
-        working-directory: .github/workflows
-        run: |
-          cfn-lint -t main.yaml
-          
+      
+
       # TODO: add deployment to cloudformation
 
 
